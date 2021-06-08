@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HydroCoupleProject name="LCR.hcp">
+    <ModelComponents>
+        <ModelComponent Name="SWMM Component 5.1.012" Caption="LCR SWMM model" Description="" ModelComponentFile="../SWMM/LCR_PreStorm.hcc" XPos="4089.79" YPos="50.1952">
+            <ExchangeItemPositions>
+                <Outputs>
+                    <Output Id="ConduitTopWidthOutput" XPos="3382.65" YPos="345.228" Caption="Conduit top width (m)"/>
+                    <Output Id="LinkFlowOutput" XPos="3389.92" YPos="887.088" Caption="Flow through conduit (m^3/s)"/>
+                    <Output Id="LinkVolumeTimeDerivativeOutput" XPos="4456.73" YPos="783.254" Caption="Link Volume Time Derivative (m^3/s)"/>
+                    <Output Id="LinkDepthOutput" XPos="3381.78" YPos="522.79" Caption="Depth of water in conduit (m)"/>
+                    <Output Id="NodeSurfaceFlow" XPos="3971.48" YPos="787.537" Caption="Inflow/Outflows from Nodes (m^3/s)"/>
+                    <Output Id="ConduitCrossSectionAreaOutput" XPos="3385.58" YPos="695.081" Caption="Conduit flow cross section area (m^2)"/>
+                    <Output Id="LinkWSEOutput" XPos="4496.34" YPos="-410.624" Caption="Link Water Surface Elevation (m)"/>
+                </Outputs>
+                <Inputs>
+                    <Input Id="NodeWSEInput" XPos="5151.09" YPos="166.688" Caption="Node Water Surface Elevation (m)"/>
+                    <Input Id="NodePondedDepthInput" XPos="5184.68" YPos="-17.5108" Caption="Node Ponded Depth (m)"/>
+                    <Input Id="Ponded Area" XPos="5201.47" YPos="363.482" Caption="Node Ponded Areas (m^2)"/>
+                    <Input Id="ConduitSeepageLossRateInput" XPos="5323.23" YPos="-385.908" Caption="Conduit Seepage Loss Rate (m^3/s)"/>
+                    <Input Id="ConduitEvapLossRateInput" XPos="5369.41" YPos="706.688" Caption="Conduit Evaporation Loss Rate (m^3/s)"/>
+                    <Input Id="LinkLateralInflowInput" XPos="5285.44" YPos="530.886" Caption="Lateral Inflow (m^3/s)"/>
+                    <Input Id="LinkRoughnessInput" XPos="5230.86" YPos="-205.908" Caption="Mannings Roughness"/>
+                </Inputs>
+            </ExchangeItemPositions>
+        </ModelComponent>
+        <ModelComponent Name="Channel Solute and Temperature Transport 1.0.0" Caption="LCR CSH model" Description="" IsTrigger="True" ModelComponentFile="../CSH/LCR_csh.hcc" XPos="-211.826" YPos="-68.747">
+            <ExchangeItemPositions>
+                <Outputs>
+                    <Output Id="TemperatureOutput" XPos="777.301" YPos="-935.968" Caption="Element Temperature (°C)"/>
+                    <Output Id="ElementTopWidthOutput" XPos="-1267.76" YPos="-328.817" Caption="Element Top Width (m)"/>
+                    <Output Id="ElementDepthOutput" XPos="-1284.04" YPos="398.307" Caption="Element Depth (m)"/>
+                    <Output Id="ElementXSectionAreaOutput" XPos="-1084.87" YPos="-75.2221" Caption="Element Cross-Section Area (m^2)"/>
+                    <Output Id="ElementFlowOutput" XPos="-1077.09" YPos="175.333" Caption="Element Flow (m^3/s)"/>
+                </Outputs>
+                <Inputs>
+                    <Input Id="ElementFlowInput" XPos="699.906" YPos="879.667" Caption="Element Flow (m^3/s)"/>
+                    <Input Id="RadiationFluxInput" XPos="-895.099" YPos="-836.153" Caption="External Radiation Flux (W/m^2)"/>
+                    <Input Id="ElementTopWidthInput" XPos="679.532" YPos="333.4" Caption="Element Top Width (m)"/>
+                    <Input Id="ElementXSectionAreaInput" XPos="698.988" YPos="683.56" Caption="Element Cross-Section Area(m^2)"/>
+                    <Input Id="HeatFluxInput" XPos="730.578" YPos="-529.017" Caption="External Heat Flux (J/s)"/>
+                    <Input Id="ElementVolumeTimeDerivativeInput" XPos="-69.3897" YPos="901.175" Caption="Element Volume Time Derivative (m^3/s)"/>
+                    <Input Id="ElementDepthInput" XPos="685.489" YPos="492.44" Caption="Element Depth (m)"/>
+                </Inputs>
+            </ExchangeItemPositions>
+        </ModelComponent>
+        <ModelComponent Name="Radiative Heat Exchange Model 1.0.0" Caption="LCR RHE Model" Description="" ModelComponentFile="../RHE/LCR_rhe.hcc" XPos="665.037" YPos="-1706.14">
+            <ExchangeItemPositions>
+                <Outputs>
+                    <Output Id="SedNetSWRadiationOutput" XPos="1675.63" YPos="-2128.69" Caption="Sediment Shortwave Solar Radiation (W/m^2)"/>
+                    <Output Id="BackLWRadiationOutput" XPos="-102.681" YPos="-1346.75" Caption="Back Longwave Radiation (W/m^2)"/>
+                    <Output Id="NetSWSolarRadiationOutput" XPos="28.3226" YPos="-1191.73" Caption="Net Shortwave Solar Radiation (W/m^2)"/>
+                    <Output Id="LandCoverLWRadiationOutput" XPos="125.039" YPos="-1038.34" Caption="Landcover Longwave Radiation (W/m^2)"/>
+                    <Output Id="AtmosphericLWRadiationOutput" XPos="-152.355" YPos="-1522.09" Caption="Atmospheric Longwave Radiation (W/m^2)"/>
+                </Outputs>
+                <Inputs>
+                    <Input Id="SkyViewFactorInput" XPos="658.243" YPos="-2260.12" Caption="Skyview Factor"/>
+                    <Input Id="ElementTopWidthInput" XPos="1523.96" YPos="-921.425" Caption="Element Top Width (m)"/>
+                    <Input Id="ShadeFactorInput" XPos="931.056" YPos="-2260.37" Caption="Shade Factor"/>
+                    <Input Id="LCTemperatureInput" XPos="292.244" YPos="-2367" Caption="Land Cover Temperature Input (°C)"/>
+                    <Input Id="ChannelTemperatureInput" XPos="788.162" YPos="-1221.01" Caption="Channel Temperature Input (°C)"/>
+                    <Input Id="ElementDepthInput" XPos="1455.2" YPos="-790.138" Caption="Element Depth (m)"/>
+                    <Input Id="ShadeFactorMultiplierInput" XPos="1268.68" YPos="-2343.72" Caption="Shade Factor Multiplier"/>
+                </Inputs>
+            </ExchangeItemPositions>
+        </ModelComponent>
+        <ModelComponent Name="Hyporheic Transient Storage Temperature Model 1.0.0" Caption="LCR Hyporheic Transient Storage Zone Model" Description="" ModelComponentFile="../HTS/LCR_hts.hcc" XPos="2610.93" YPos="-1660.94">
+            <ExchangeItemPositions>
+                <Outputs>
+                    <Output Id="MainChannelConductionHeatFluxOutput" XPos="2774.03" YPos="-424.004" Caption="Main Channel Conduction Heat Flux (J/s)"/>
+                    <Output Id="MainChannelAdvectionHeatFluxOutput" XPos="2703.84" YPos="-597.512" Caption="Main Channel Advection Heat Flux (J/s)"/>
+                </Outputs>
+                <Inputs>
+                    <Input Id="HTSDepthInput" XPos="3359.88" YPos="-1945.72" Caption="HTS Depth (m)"/>
+                    <Input Id="SedThermaDiffusivityCoeffInput" XPos="3365.59" YPos="-1391.36" Caption="Sediment Thermal Diffusivity Coefficient (m^2/s)"/>
+                    <Input Id="AdvectiveTransportCoeffInput" XPos="3363.7" YPos="-1765.48" Caption="Advective Transport Coefficient (m^3/s)"/>
+                    <Input Id="RadiationFluxInput" XPos="2713.68" YPos="-2133.05" Caption="External Radiation Flux (W/m^2)"/>
+                    <Input Id="HeatFluxInput" XPos="3359.18" YPos="-1020.95" Caption="External Heat Flux (J/s)"/>
+                    <Input Id="ChannelTemperatureInput" XPos="2123.16" YPos="-1563.41" Caption="Channel Temperature Input (°C)"/>
+                    <Input Id="WidthInput" XPos="3372.61" YPos="-804.722" Caption="Element Width (m)"/>
+                    <Input Id="GroundDepthInput" XPos="3363.7" YPos="-1197.51" Caption="Ground Depth (m)"/>
+                    <Input Id="GroundTemperatureInput" XPos="3355.5" YPos="-2123.23" Caption="Ground Temperature Input (°C)"/>
+                </Inputs>
+            </ExchangeItemPositions>
+        </ModelComponent>
+    </ModelComponents>
+    <ModelComponentConnections>
+        <ModelComponentConnection SourceModelComponentIndex="0">
+            <OutputExchangeItem OutputExchangeItemId="ConduitTopWidthOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="3" InputExchangeItemId="WidthInput" InputExchangeItemCaption="Element Width (m)" XPos="3372.61" YPos="-804.722"/>
+                    <InputExchangeItem ModelComponentIndex="2" InputExchangeItemId="ElementTopWidthInput" InputExchangeItemCaption="Element Top Width (m)" XPos="1523.96" YPos="-921.425"/>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="ElementTopWidthInput" InputExchangeItemCaption="Element Top Width (m)" XPos="679.532" YPos="333.4"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="LinkFlowOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="ElementFlowInput" InputExchangeItemCaption="Element Flow (m^3/s)" XPos="699.906" YPos="879.667"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="LinkDepthOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="2" InputExchangeItemId="ElementDepthInput" InputExchangeItemCaption="Element Depth (m)" XPos="1455.2" YPos="-790.138"/>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="ElementDepthInput" InputExchangeItemCaption="Element Depth (m)" XPos="685.489" YPos="492.44"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="ConduitCrossSectionAreaOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="ElementXSectionAreaInput" InputExchangeItemCaption="Element Cross-Section Area(m^2)" XPos="698.988" YPos="683.56"/>
+                </Connections>
+            </OutputExchangeItem>
+        </ModelComponentConnection>
+        <ModelComponentConnection SourceModelComponentIndex="1">
+            <OutputExchangeItem OutputExchangeItemId="TemperatureOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="3" InputExchangeItemId="ChannelTemperatureInput" InputExchangeItemCaption="Channel Temperature Input (°C)" XPos="2123.16" YPos="-1563.41"/>
+                    <InputExchangeItem ModelComponentIndex="2" InputExchangeItemId="ChannelTemperatureInput" InputExchangeItemCaption="Channel Temperature Input (°C)" XPos="788.162" YPos="-1221.01"/>
+                </Connections>
+            </OutputExchangeItem>
+        </ModelComponentConnection>
+        <ModelComponentConnection SourceModelComponentIndex="2">
+            <OutputExchangeItem OutputExchangeItemId="SedNetSWRadiationOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="3" InputExchangeItemId="RadiationFluxInput" InputExchangeItemCaption="External Radiation Flux (W/m^2)" XPos="2713.68" YPos="-2133.05"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="BackLWRadiationOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="RadiationFluxInput" InputExchangeItemCaption="External Radiation Flux (W/m^2)" XPos="-895.099" YPos="-836.153"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="NetSWSolarRadiationOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="RadiationFluxInput" InputExchangeItemCaption="External Radiation Flux (W/m^2)" XPos="-895.099" YPos="-836.153"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="LandCoverLWRadiationOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="RadiationFluxInput" InputExchangeItemCaption="External Radiation Flux (W/m^2)" XPos="-895.099" YPos="-836.153"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="AtmosphericLWRadiationOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="RadiationFluxInput" InputExchangeItemCaption="External Radiation Flux (W/m^2)" XPos="-895.099" YPos="-836.153"/>
+                </Connections>
+            </OutputExchangeItem>
+        </ModelComponentConnection>
+        <ModelComponentConnection SourceModelComponentIndex="3">
+            <OutputExchangeItem OutputExchangeItemId="MainChannelConductionHeatFluxOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="HeatFluxInput" InputExchangeItemCaption="External Heat Flux (J/s)" XPos="730.578" YPos="-529.017"/>
+                </Connections>
+            </OutputExchangeItem>
+            <OutputExchangeItem OutputExchangeItemId="MainChannelAdvectionHeatFluxOutput">
+                <Connections>
+                    <InputExchangeItem ModelComponentIndex="1" InputExchangeItemId="HeatFluxInput" InputExchangeItemCaption="External Heat Flux (J/s)" XPos="730.578" YPos="-529.017"/>
+                </Connections>
+            </OutputExchangeItem>
+        </ModelComponentConnection>
+    </ModelComponentConnections>
+</HydroCoupleProject>
